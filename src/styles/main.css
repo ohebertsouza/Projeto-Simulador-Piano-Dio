@@ -1,0 +1,137 @@
+body {
+  align-items: center;
+  background-color: #e3f2fd;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: black;
+  border-radius: 20px;
+  padding: 35px 40px;
+  width: 780px;
+}
+
+.container header {
+  align-items: center;
+  color: #b2b2b2;
+  display: flex;
+  justify-content: space-between;
+}
+
+header h2 {
+  font-size: 1.6rem;
+}
+
+header .column {
+  align-items: center;
+  display: flex;
+}
+
+header .column span {
+  font-size: 1.19rem;
+  font-weight: 500;
+  margin-right: 15px;
+}
+
+.volume-slider input {
+  accent-color: #fff;
+}
+
+.keys-check input {
+  appearance: none;
+  background-color: #4b4b4b;
+  border-radius: 30px;
+  cursor: pointer;
+  height: 30px;
+  position: relative;
+  width: 60px;
+}
+
+.keys-check input::before {
+  background-color: #8c8c8c;
+  border-radius: inherit;
+  content: "";
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 0.3rem;
+  width: 20px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.keys-check input:checked::before {
+  background-color: #fff;
+  left: 2.1rem;
+}
+
+.piano-keys {
+  display: flex;
+  margin-top: 40px;
+}
+
+.piano-keys .key {
+  color: #a2a2a2;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.piano-keys .white {
+  background: linear-gradient(
+    #fff 96%,
+    #eee 4%
+  );
+  border-radius: 8px;
+  height: 230px;
+  width: 70px;
+  border: 1px solid black;
+}
+
+.piano-keys .white.active {
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    #eee 100%
+  );
+  box-shadow: inset -5px 5px 20px rgba(0, 0, 0, .2);
+}
+
+.piano-keys .black {
+  background: linear-gradient(
+    #333,
+    #000
+  );
+  border-radius: 0 0 5px 5px;
+  border: 1px solid black;
+  height: 140px;
+  margin: 0 -22px 0 -22px;
+  width: 44px;
+  z-index: 2;
+}
+
+.piano-keys .black.active {
+  background: linear-gradient(
+    to bottom,
+    #000,
+    #434343
+  );
+  box-shadow: inset -5px 5px 10px rgba(255, 255, 255, .1);
+}
+
+.piano-keys span {
+  bottom: 20px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 1.13rem;
+}
+
+.piano-keys .key.hide span {
+  display: none;
+}
